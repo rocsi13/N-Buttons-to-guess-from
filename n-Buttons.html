@@ -14,19 +14,19 @@
 			.submit_button:active {
 				background: #FFF8DC;
 			}
-			.button {
+			.guessButton {
 				height: 100px;
 				width: 200px;
 				background: #BC8F8F;
 				border: none;
 				border-radius: 8px;
-				font-size: 16px;
+				font-size: 40px;
 				font-weight: 400px ;
 			}
-			.button:active {
+			.guessButton:active {
 				background: #D2B48C;
 			}
-			.button__text {
+			.guessButton__text {
 				display: inline-flex;
 				align-items: center;
 				color: #fff;
@@ -44,7 +44,7 @@
 		<br>
 		<div class="mb-3">
          		<input type="number"; id="numberOfButtons"; style="height: 40px; width: 150px; font-size: 16px;" placeholder="Type a number">
-          			<div type= "button" class="submit_button" onclick="return atributeNumberOfButtons();">
+          			<div type= "submit" class="submit_button" onclick="return atributeNumberOfButtons();">
           				<img src="https://img.icons8.com/fluency-systems-regular/30/undefined/submit-progress.png" align="center"/>
 				</div>
 			</input>
@@ -53,12 +53,12 @@
 	<script type="text/javascript">
 		function atributeNumberOfButtons() {
 			let buttonsNumber = document.getElementById("numberOfButtons").value; 
-			const randomNumber = Math.floor(Math.random() * numberOfButtons + 1);
-			for (let i = 1; i <= buttonsNumber; ++i) {
+			const randomNumber = Math.floor(Math.random() * buttonsNumber) + 1;
+			for (let i = 0; i < buttonsNumber; ++i) {
 				let btn = document.createElement("button");
-				btn.type = "button";
+				btn.type = "guessButton";
 				btn.onclick = function() {	
-					if (i  == randomNumber) {
+					if (i == randomNumber) {
 		    			alert("Congratulations! You've won!");
 		  			} else {
 		    			alert("Sorry! You've lost!")
