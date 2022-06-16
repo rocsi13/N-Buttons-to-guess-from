@@ -54,7 +54,7 @@
 		function atributeNumberOfButtons() {
 			let buttonsNumber = document.getElementById("numberOfButtons").value; 
 			const randomNumber = Math.floor(Math.random() * buttonsNumber) + 1;
-			for (let i = 0; i < buttonsNumber; ++i) {
+			for (let i = 1; i <= buttonsNumber; ++i) {
 				let btn = document.createElement("button");
 				btn.type = "guessButton";
 				btn.onclick = function() {	
