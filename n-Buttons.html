@@ -14,22 +14,20 @@
 			.submit_button:active {
 				background: #FFF8DC;
 			}
-			.guessButton {
+			button {
 				height: 100px;
 				width: 200px;
-				background: #BC8F8F;
-				border: none;
+				background: #F5DEB3;/*Try me!*/
 				border-radius: 8px;
-				font-size: 40px;
-				font-weight: 400px ;
+				font-size: 40px; /* Try me! */
+				font-weight: 400px;
+				font-colour: black;
+				padding: 10px 24px;
+				border-radius: 8px;
+				border: 4px solid #black;
 			}
-			.guessButton:active {
-				background: #D2B48C;
-			}
-			.guessButton__text {
-				display: inline-flex;
-				align-items: center;
-				color: #fff;
+			button:active {
+				background: #D2B48C; 
 			}
 		</style>
 	</head>
@@ -43,9 +41,9 @@
 		</h3>
 		<br>
 		<div class="mb-3">
-         	<input type="number"; id="numberOfButtons"; style="height: 40px; width: 150px; font-size: 16px;" placeholder="Type a number">
-          		<div type= "submit" class="submit_button" onclick="return atributeNumberOfButtons();">
-          			<img src="https://img.icons8.com/fluency-systems-regular/30/undefined/submit-progress.png" align="center"/>
+         		<input type="number"; id="numberOfButtons"; style="height: 40px; width: 150px; font-size: 16px;" placeholder="Type a number">
+          			<div type= "submit" class="submit_button" onclick="return atributeNumberOfButtons();">
+          				<img src="https://img.icons8.com/fluency-systems-regular/30/undefined/submit-progress.png" align="center"/>
 				</div>
 			</input>
 		</div>	
@@ -56,7 +54,8 @@
 			const randomNumber = Math.floor(Math.random() * buttonsNumber) + 1;
 			for (let i = 1; i <= buttonsNumber; ++i) {
 				let btn = document.createElement("button");
-				btn.type = "guessButton";
+				btn.type = "button";
+				btn.innerHTML = "Try me!"
 				btn.onclick = function() {	
 					if (i == randomNumber) {
 		    			alert("Congratulations! You've won!");
@@ -69,4 +68,5 @@
 		}	
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </html>
